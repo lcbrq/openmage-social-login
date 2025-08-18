@@ -1,0 +1,11 @@
+<?php
+/**
+ * @class LCB_SocialLogin_Block_Widget $this
+ */
+$providers = Mage::helper('lcb_sociallogin')->getProviders();
+?>
+<?php foreach ($providers as $name => $parameters) : ?>
+    <a href="<?= $this->getUrl('sociallogin/index/authorize', ['provider' => $name]) ?>">
+        <?= $name ?>
+    </a>
+<?php endforeach; ?>

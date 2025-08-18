@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+
+    <customer_account_login>
+        <reference name="customer_form_login">
+            <block type="lcb_sociallogin/widget" name="lcb.sociallogin.widget" as="sociallogin" template="lcb/sociallogin/widget.phtml"/>
+        </reference>
+    </customer_account_login>
+    
+    <customer_account_create>
+        <reference name="customer_form_register">
+            <block type="lcb_sociallogin/widget" name="lcb.sociallogin.widget" as="sociallogin" template="lcb/sociallogin/widget.phtml"/>
+        </reference>
+    </customer_account_create>
+
+</layout>

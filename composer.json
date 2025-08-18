@@ -1,0 +1,18 @@
+{
+    "name": "lcbrq/openmage-social-login",
+    "version": "1.0.0",
+    "license": ["MIT"],
+    "type": "magento-module",
+    "require": {
+        "php": ">=7.4.0",
+        "socialconnect/auth": "*",
+        "guzzlehttp/guzzle": "^7",
+        "guzzlehttp/psr7": "^2",
+        "php-http/guzzle7-adapter": "^1",
+        "socialconnect/auth": "^3"
+    },
+    "description": "Add social login to OpenMage website within SocialConnect library",
+    "extra": {
+        "magento-root-dir": "test/"
+    }
+}

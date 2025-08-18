@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <lcb_sociallogin translate="title" module="lcb_sociallogin">
+                                        <title>Social Login</title>
+                                        <sort_order>1500</sort_order>
+                                    </lcb_sociallogin>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>

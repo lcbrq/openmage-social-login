@@ -1,0 +1,4 @@
+app/code/community/LCB/SocialLogin
+app/design/frontend/base/default/layout/lcb_sociallogin.xml
+app/design/frontend/base/default/template/lcb/sociallogin
+app/etc/modules/LCB_SocialLogin.xml
