@@ -25,6 +25,8 @@ class LCB_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
                         'identity.fields' => [
                             'email',
                             'name',
+                            'first_name',
+                            'last_name',
                             'picture.width(99999)'
                         ],
                     ]
