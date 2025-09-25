@@ -13,7 +13,8 @@ class LCB_SocialLogin_AuthorizeController extends Mage_Core_Controller_Front_Act
         $user = $provider->getIdentity($accessToken);
         $customer = Mage::getModel('lcb_sociallogin/customer')->getOrCreateFromSocialLogin($user, 'google');
         Mage::getSingleton('customer/session')->loginById($customer->getId());
-        return $this->_redirect('customer/account');
+
+        return $this->loginRedirect($customer);
     }
 
     public function facebookAction(): self
@@ -24,7 +25,19 @@ class LCB_SocialLogin_AuthorizeController extends Mage_Core_Controller_Front_Act
         $user = $provider->getIdentity($accessToken);
         $customer = Mage::getModel('lcb_sociallogin/customer')->getOrCreateFromSocialLogin($user, 'facebook');
         Mage::getSingleton('customer/session')->loginById($customer->getId());
-        return $this->_redirect('customer/account');
+
+        return $this->loginRedirect($customer);
+    }
+
+    /**
+     * @param Mage_Customer_Model_Customer $customer
+     * @return $this
+     */
+    private function loginRedirect($customer)
+    {
+        $url = Mage::getUrl('customer/account') . '?source=' . $customer->getLoginProvider();
+
+        return $this->_redirectUrl($url);
     }
 
 }
