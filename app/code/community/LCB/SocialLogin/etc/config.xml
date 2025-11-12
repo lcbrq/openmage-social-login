@@ -6,6 +6,14 @@
         </LCB_SocialLogin>
     </modules>
     <global>
+        <resources>
+          <lcb_sociallogin_setup>
+            <setup>
+              <module>LCB_SocialLogin</module>
+              <class>Mage_Customer_Model_Entity_Setup</class>
+            </setup>
+          </lcb_sociallogin_setup>
+        </resources>
         <blocks>
             <lcb_sociallogin>
                 <class>LCB_SocialLogin_Block</class>
@@ -22,6 +30,18 @@
             </lcb_sociallogin>
         </models>
     </global>
+    <adminhtml>
+      <events>
+        <adminhtml_block_html_before>
+          <observers>
+            <lcb_sl_add_lp_column>
+              <class>lcb_sociallogin/observer</class>
+              <method>addLoginProviderToCustomerGrid</method>
+            </lcb_sl_add_lp_column>
+          </observers>
+        </adminhtml_block_html_before>
+      </events>
+    </adminhtml>
     <frontend>
         <routers>
             <sociallogin>
