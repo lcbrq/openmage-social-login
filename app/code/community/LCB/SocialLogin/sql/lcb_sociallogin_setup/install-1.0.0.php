@@ -4,10 +4,10 @@
 $installer = $this;
 $installer->startSetup();
 
-$attrCode = 'login_provider';
+$attributeCode = LCB_SocialLogin_Helper_Data::ATTRIBUTE_CODE;
 
-if (!$installer->getAttributeId('customer', $attrCode)) {
-    $installer->addAttribute('customer', $attrCode, array(
+if (!$installer->getAttributeId('customer', $attributeCode)) {
+    $installer->addAttribute('customer', $attributeCode, array(
         'type'         => 'varchar',
         'label'        => 'Login Provider',
         'input'        => 'select',
@@ -20,7 +20,7 @@ if (!$installer->getAttributeId('customer', $attrCode)) {
         'system'       => 0,
     ));
 
-    $attribute = Mage::getSingleton('eav/config')->getAttribute('customer', $attrCode);
+    $attribute = Mage::getSingleton('eav/config')->getAttribute('customer', $attributeCode);
     $attribute->setData('used_in_forms', array('adminhtml_customer'));
     $attribute->save();
 }

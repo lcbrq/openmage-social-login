@@ -2,30 +2,37 @@
 
 class LCB_SocialLogin_Model_Attribute_Source_LoginProvider extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
-    protected $_options = array(
-        array('value' => 'site',     'label' => 'Strona'),
-        array('value' => 'facebook', 'label' => 'Facebook'),
-        array('value' => 'google',   'label' => 'Google'),
-    );
-
+    /**
+     * @return array
+     */
     public function getAllOptions()
     {
-        return $this->_options;
+        return array(
+            array('value' => 'site', 'label' => Mage::helper('cms')->__('Page')),
+            array('value' => 'facebook', 'label' => 'Facebook'),
+            array('value' => 'google', 'label' => 'Google'),
+        );
     }
 
+    /**
+     * @return array
+     */
     public function toOptionArray()
     {
         return $this->getAllOptions();
     }
 
-    public function getOptionText($value)
+    /**
+     * @return array
+     */
+    public function toArray()
     {
-        $v = (string)$value;
-        foreach ($this->_options as $opt) {
-            if ((string)$opt['value'] === $v) {
-                return $opt['label'];
-            }
+        $options = [];
+
+        foreach ($this->getAllOptions() as $option) {
+            $options[$option['value']] = $option['label'];
         }
-        return null;
+
+        return $options;
     }
 }

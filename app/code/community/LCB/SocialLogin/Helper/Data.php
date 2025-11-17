@@ -12,6 +12,11 @@ use Http\Adapter\Guzzle7\Client as GuzzleAdapter;
 
 class LCB_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    /**
+     * @var string
+     */
+    public const ATTRIBUTE_CODE = 'login_provider';
+
     public function getProviders(): array
     {
         $providers = [];
